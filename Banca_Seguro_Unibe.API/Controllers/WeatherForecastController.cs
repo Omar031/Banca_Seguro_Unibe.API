@@ -18,6 +18,11 @@ namespace Banca_Seguro_Unibe.API.Controllers
             _logger = logger;
         }
 
+        /// <summary>
+        /// Hola soy el estudiante 1 de 35
+        /// </summary>
+        /// <returns></returns>
+
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
