@@ -19,7 +19,7 @@ namespace Banca_Seguro_Unibe.API.Controllers
         }
 
         /// <summary>
-        /// Hola soy el estudiante 1 de 35
+        /// Hola soy el estudiante Mario Guzman 23-1061
         /// </summary>
         /// <returns></returns>
 
