@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Db_BancaSeguroAPI">
+  <DataContextMoniker Name="/Db_BancaSeguroAPIDataContext" />
+  <nestedChildShapes>
+    <classShape Id="541ff231-5d60-4ea0-8299-ff56eaf044e7" absoluteBounds="3.5, 1, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/TD_TenantCliente" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5db2dfdc-de5d-4ce9-a955-da7256ad7eb7" absoluteBounds="3.515, 1.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="16ca3ba3-e64e-4be7-8b7b-b96acdaed301" absoluteBounds="0.75, 1, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Cliente" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c38b5c9b-2661-4c5e-acba-43f928efd2b3" absoluteBounds="0.765, 1.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="193ef52f-cdd9-42e3-8d22-9c74463defd8" absoluteBounds="0.75, 4.875, 2, 2.9247054036458326">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Tenant" />
+      <nestedChildShapes>
+        <elementListCompartment Id="09dde5c7-437a-4521-81f6-9445185cb61a" absoluteBounds="0.765, 5.335, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 2.36620198567708); (3.5 : 2.36620198567708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Cliente/TM_Cliente_TD_TenantCliente" />
+      <nodes>
+        <classShapeMoniker Id="16ca3ba3-e64e-4be7-8b7b-b96acdaed301" />
+        <classShapeMoniker Id="541ff231-5d60-4ea0-8299-ff56eaf044e7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.33735270182292); (4.5 : 6.33735270182292); (4.5 : 3.73240397135417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Tenant/TM_Tenant_TD_TenantCliente" />
+      <nodes>
+        <classShapeMoniker Id="193ef52f-cdd9-42e3-8d22-9c74463defd8" />
+        <classShapeMoniker Id="541ff231-5d60-4ea0-8299-ff56eaf044e7" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

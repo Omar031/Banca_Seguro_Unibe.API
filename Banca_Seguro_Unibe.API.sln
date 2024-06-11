@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Banca_Seguro_Unibe.API", "Banca_Seguro_Unibe.API\Banca_Seguro_Unibe.API.csproj", "{3E1F6708-4529-461A-9F93-F766C2877AE8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Banca_Seguro_Unibe.API", "Banca_Seguro_Unibe.API\Banca_Seguro_Unibe.API.csproj", "{3E1F6708-4529-461A-9F93-F766C2877AE8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "capaDatos", "capaDatos\capaDatos.csproj", "{6C902E8C-26AD-49DD-A120-B9C4581A4A9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "capaModelos", "capaModelo\capaModelos.csproj", "{AE09E44E-2829-48A7-8636-31D7FC0ED7B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "capaNegocios", "capaNegocios\capaNegocios.csproj", "{FDF754F1-F62E-4078-BA54-857EFFA5E46A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{3E1F6708-4529-461A-9F93-F766C2877AE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3E1F6708-4529-461A-9F93-F766C2877AE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3E1F6708-4529-461A-9F93-F766C2877AE8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6C902E8C-26AD-49DD-A120-B9C4581A4A9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6C902E8C-26AD-49DD-A120-B9C4581A4A9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6C902E8C-26AD-49DD-A120-B9C4581A4A9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6C902E8C-26AD-49DD-A120-B9C4581A4A9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE09E44E-2829-48A7-8636-31D7FC0ED7B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE09E44E-2829-48A7-8636-31D7FC0ED7B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE09E44E-2829-48A7-8636-31D7FC0ED7B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE09E44E-2829-48A7-8636-31D7FC0ED7B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDF754F1-F62E-4078-BA54-857EFFA5E46A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDF754F1-F62E-4078-BA54-857EFFA5E46A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDF754F1-F62E-4078-BA54-857EFFA5E46A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDF754F1-F62E-4078-BA54-857EFFA5E46A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
