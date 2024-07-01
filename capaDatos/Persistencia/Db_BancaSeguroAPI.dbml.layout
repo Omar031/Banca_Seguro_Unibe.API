@@ -1,38 +1,758 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="Db_BancaSeguroAPI">
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 19.375, 123.5" name="Db_BancaSeguroAPI">
   <DataContextMoniker Name="/Db_BancaSeguroAPIDataContext" />
   <nestedChildShapes>
-    <classShape Id="541ff231-5d60-4ea0-8299-ff56eaf044e7" absoluteBounds="3.5, 1, 2, 2.7324039713541666">
+    <classShape Id="59bf80c2-323b-4fe3-bfbc-97ffaff93841" absoluteBounds="9.25, 73.75, 2, 2.9247054036458451">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/AtencionClienteXCliente" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0fbe83fd-e1c9-4f21-bc2e-ac2dbb6853b9" absoluteBounds="9.265, 74.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4ea80aae-5267-4be4-a2b3-f7996affe542" absoluteBounds="3.5, 37.375, 2, 1.7708968098958309">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/Auditoria" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d931f812-ae4e-4334-b9f8-5a907e6ed290" absoluteBounds="3.515, 37.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1a3bcdf7-d8e5-420c-b1f8-e6bf2bc5b455" absoluteBounds="6.75, 2.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/CategoriasCuenta" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dc28438f-73b4-482b-b3f3-ff8cdf7c9bbf" absoluteBounds="6.765, 3.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3fa2441a-10fe-4c83-a0dc-9c7979dc3507" absoluteBounds="15, 71.875, 2, 2.9247054036458451">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/Detalles_Reclamacion" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5a0771e9-10d4-4f19-973e-104a334e462f" absoluteBounds="15.015, 72.335, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="82450c2b-c795-4e30-97f6-d35cc3849124" absoluteBounds="9, 115.875, 2, 2.9247054036458451">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/EstadosFactura" />
+      <nestedChildShapes>
+        <elementListCompartment Id="90e35cd5-1b74-40c1-8e12-1245f3a10286" absoluteBounds="9.015, 116.335, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2bc2c395-1c70-4891-99ab-262b9ee46ed7" absoluteBounds="9, 102.75, 2, 2.9247054036458451">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/Evaluaciones_Credito" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3caf987b-76dd-4e46-9800-882c3cdd4292" absoluteBounds="9.015, 103.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6823f591-a5d2-4a9a-a66e-1dc2b6aed10c" absoluteBounds="6.25, 115.5, 2, 3.5016097005208451">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/Factura" />
+      <nestedChildShapes>
+        <elementListCompartment Id="deb9811b-1ac4-4d69-8924-9979e6be8a58" absoluteBounds="6.265, 115.96, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="eafe8920-3da3-4bbe-b5ff-ec8e9cf6ab41" absoluteBounds="6.25, 119.75, 2, 3.5016097005208451">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/Nomina" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b1b8a0dd-8fa9-4895-a8d2-8c53f721d8c8" absoluteBounds="6.265, 120.21, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ab975855-0211-4ee3-b7c5-e0cfe4aee310" absoluteBounds="9.25, 69.75, 2, 2.9247054036458451">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/ProductoXCliente" />
+      <nestedChildShapes>
+        <elementListCompartment Id="39f2cd4e-393c-43e9-a466-71c64d8f7616" absoluteBounds="9.265, 70.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1d59cb11-dad8-473c-85f5-dd7b389a8103" absoluteBounds="12.25, 73.25, 2, 3.8862125651041595">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/Reclamacione" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c60db7db-3464-4bde-b1d8-cd34ba941cc8" absoluteBounds="12.265, 73.71, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5ad2a9c5-81bd-493e-8786-ee5d8616e09c" absoluteBounds="15, 75.5, 2, 3.1170068359375023">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/Resolucion_Reclamacione" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c77f4be3-6a25-42f2-ac72-2241ce84e23d" absoluteBounds="15.015, 75.96, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ffb37c5b-aa6f-47e6-a1a4-099bbfdea32d" absoluteBounds="6.5, 57.875, 2, 2.7324039713541595">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/Servicio_al_cliente" />
+      <nestedChildShapes>
+        <elementListCompartment Id="86dfd395-c502-4611-954e-a25a021a1bcf" absoluteBounds="6.515, 58.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3f95d67b-0b11-4fd1-a00e-dfc30ccfc429" absoluteBounds="3.5, 77.875, 2, 2.7324039713541595">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/Servicio" />
+      <nestedChildShapes>
+        <elementListCompartment Id="eea18f65-0be6-439d-a0ee-8f88ff76cc97" absoluteBounds="3.515, 78.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="15c5651e-58d0-4e01-b1c3-5d23a77c9195" absoluteBounds="6.25, 77.75, 2, 2.9247054036458451">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/ServicioXCliente" />
+      <nestedChildShapes>
+        <elementListCompartment Id="598a7f20-3924-40f7-ac76-48d60216f8fc" absoluteBounds="6.265, 78.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f61856d7-638f-4786-9572-3f4caaa0950f" absoluteBounds="6.25, 111.625, 2, 3.1170068359375023">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/Solicitudes_Credito" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6bfc5530-d4c0-42a7-8038-4500ca6d9cae" absoluteBounds="6.265, 112.085, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2656f66f-1954-43e1-893a-f372b7e37fe7" absoluteBounds="6.5, 107.25, 2, 2.7324039713541595">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/TA_AgentesDeSoporte" />
+      <nestedChildShapes>
+        <elementListCompartment Id="246cdefb-5679-4db4-af9e-7caeb756e1f6" absoluteBounds="6.515, 107.71, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="da27903b-ceb9-4020-9ab7-32a74018191e" absoluteBounds="9.25, 90.125, 2, 2.9247054036458451">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/TA_AutorizacionesUsuario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bcf2acf7-82cc-4b7a-be04-993040231b9e" absoluteBounds="9.265, 90.585, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="635e0e9a-70b1-41d5-933c-9a720494ef74" absoluteBounds="0.75, 48.75, 2, 2.9247054036458309">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/TA_ConfiguracionParamSistema" />
+      <nestedChildShapes>
+        <elementListCompartment Id="29955f06-4e74-487e-a112-a427bbf4d6a5" absoluteBounds="0.765, 49.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ceb65d20-c2ed-4057-b9ae-5f8c58cd14cf" absoluteBounds="6.25, 97.5, 2, 2.3478011067708451">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/TA_HistorialCambioReg" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a7a3f724-6f98-44d8-a187-d3f70c7bf35c" absoluteBounds="6.265, 97.96, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="80255622-bcdc-4453-bbb2-52bb804b36a9" absoluteBounds="3.5, 53.25, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/TA_HistorialMantenimiento" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4d2c0cc5-cb89-45a5-b942-8d969c10f200" absoluteBounds="3.515, 53.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8d5a0c52-aa11-4e50-8da6-63e7c7b0e607" absoluteBounds="9.25, 107.125, 2, 2.9247054036458451">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/TA_Informe" />
+      <nestedChildShapes>
+        <elementListCompartment Id="48c74f39-4d65-416d-8124-a0212d172297" absoluteBounds="9.265, 107.585, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9aae0a97-8528-4903-ac73-cc9978215dd6" absoluteBounds="12, 98.125, 2, 2.9247054036458451">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/TA_Interaccione" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7c48fc36-34cb-4c90-8f76-816f4218f41c" absoluteBounds="12.015, 98.585, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dfd6b21e-e1ee-46c8-89d7-ef02199fc67c" absoluteBounds="0.75, 56.875, 2, 2.7324039713541595">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/TA_MantenimientoTabla" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7fecc69c-e6fa-4911-9f9a-9068c03f1d5a" absoluteBounds="0.765, 57.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d65db467-78be-45fe-b05a-5562b056cec1" absoluteBounds="12, 101.875, 2, 2.9247054036458451">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/TA_Notificacione" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a12bed7b-1840-42d4-bb88-4ab256066e7c" absoluteBounds="12.015, 102.335, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dbd8c0bb-f119-4593-a69a-42f7af54f89d" absoluteBounds="3.5, 45.875, 2, 2.7324039713541595">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/TA_RegistroActividade" />
+      <nestedChildShapes>
+        <elementListCompartment Id="be945cb7-c2fc-4237-a615-b7fe5f08c214" absoluteBounds="3.515, 46.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="acbe211a-9abb-49f2-adab-e03dffb71571" absoluteBounds="3.5, 63.125, 2, 2.9247054036458238">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/TA_Seguridad" />
+      <nestedChildShapes>
+        <elementListCompartment Id="68367695-cfea-483f-a388-cae485b4f66f" absoluteBounds="3.515, 63.585, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6d318c07-fdda-4835-bf75-03a343da3c53" absoluteBounds="3.5, 50.25, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/TA_TenantConfiguracionParamSistema" />
+      <nestedChildShapes>
+        <elementListCompartment Id="864d6338-2c51-44ac-846d-f2e112c29460" absoluteBounds="3.515, 50.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f5b6158a-b8e2-4156-b72b-f21cb850d335" absoluteBounds="9.25, 97.875, 2, 3.5016097005208451">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/TA_Ticket" />
+      <nestedChildShapes>
+        <elementListCompartment Id="264b3c2f-dca2-438d-8f42-4f4567119f62" absoluteBounds="9.265, 98.335, 1.9700000000000002, 2.941609700520833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a0b577ca-3d92-48e6-8ed2-2d9ee090e4fc" absoluteBounds="9.25, 77.625, 2, 3.1170068359375023">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/TD_Notificacione" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c54d0adf-c825-4e12-88f8-3aa040c6a9fa" absoluteBounds="9.265, 78.085, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="89bdcfac-11c7-4599-9a72-e9219152715e" absoluteBounds="3.5, 4.75, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/TD_RolPermiso" />
+      <nestedChildShapes>
+        <elementListCompartment Id="956ae3d9-9874-4de5-8019-7c0b5835595b" absoluteBounds="3.515, 5.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6f60046b-6634-4b44-9409-d0b58d94710e" absoluteBounds="6.25, 73.875, 2, 2.7324039713541595">
       <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/TD_TenantCliente" />
       <nestedChildShapes>
-        <elementListCompartment Id="5db2dfdc-de5d-4ce9-a955-da7256ad7eb7" absoluteBounds="3.515, 1.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="12da982e-c0e9-436f-ba9e-6d78ce277ea4" absoluteBounds="6.265, 74.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="16ca3ba3-e64e-4be7-8b7b-b96acdaed301" absoluteBounds="0.75, 1, 2, 2.7324039713541666">
+    <classShape Id="8b9303f5-c9ab-4052-a8c7-5e006728e86c" absoluteBounds="9.25, 94.25, 2, 2.7324039713541595">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/TD_UsuarioCliente" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1df50551-70a7-409c-9532-346548e06227" absoluteBounds="9.265, 94.71, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2cff8638-4c9d-4f65-889b-de4ff68259e4" absoluteBounds="3.5, 56, 2, 2.5401025390625023">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/TD_UsuarioMantenimiento" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e25dce29-f6e6-42e7-817b-8d36c7e77c80" absoluteBounds="3.515, 56.46, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="292919b7-ee25-4b32-91b0-e3b3f696ca0e" absoluteBounds="3.5, 33, 2, 2.5401025390625023">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/TD_UsuarioRol" />
+      <nestedChildShapes>
+        <elementListCompartment Id="09f5c3ef-544d-4a40-8fd3-0f76ee017969" absoluteBounds="3.515, 33.46, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="2df75d8f-3436-43fb-a007-c7b2c28c4126" absoluteBounds="9.5, 66, 2, 2.5401025390625023">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/Tipo_de_reclamo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ac1e29ab-24d9-4e74-b6ed-8c6ab15199b9" absoluteBounds="9.515, 66.46, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="81885a24-0d4b-4987-a04d-9406a7a63918" absoluteBounds="6.25, 100.75, 2, 2.9247054036458451">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/TiposImpuesto" />
+      <nestedChildShapes>
+        <elementListCompartment Id="66aedf8c-ab7e-4518-86ef-575355fe65bc" absoluteBounds="6.265, 101.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e4875c8d-29ab-44cd-9634-b2920b1e24f1" absoluteBounds="0.75, 8.75, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Administativa" />
+      <nestedChildShapes>
+        <elementListCompartment Id="95dc33f7-2aa3-4e28-a7fb-d913fdc20292" absoluteBounds="0.765, 9.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="178ea5d1-642b-4b57-99d8-44284ea52bbb" absoluteBounds="3.5, 93.625, 2, 3.8862125651041595">
       <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Cliente" />
       <nestedChildShapes>
-        <elementListCompartment Id="c38b5c9b-2661-4c5e-acba-43f928efd2b3" absoluteBounds="0.765, 1.46, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="30a2d08b-7f71-4c55-80f3-c0112a6f8653" absoluteBounds="3.515, 94.085, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="193ef52f-cdd9-42e3-8d22-9c74463defd8" absoluteBounds="0.75, 4.875, 2, 2.9247054036458326">
+    <classShape Id="cd25a8b9-da0c-40ad-87f5-73bf93a303d4" absoluteBounds="6.25, 66.875, 2, 2.7324039713541595">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Cobertura" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f18aa2da-cc59-4fa8-b74d-0a46639ee1c7" absoluteBounds="6.265, 67.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9c85cca6-73f9-4f5f-8a25-8c221260f496" absoluteBounds="6.25, 85.5, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Cuenta" />
+      <nestedChildShapes>
+        <elementListCompartment Id="16be0c0f-e317-466b-9a2f-68f74501dd70" absoluteBounds="6.265, 85.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c638e812-41e1-4bf6-9a50-74522d2d3826" absoluteBounds="0.75, 0.75, 2, 2.5401025390625">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Permiso" />
+      <nestedChildShapes>
+        <elementListCompartment Id="be8bd8cf-dca3-492a-b53c-cf860d419365" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d258f0d4-0264-46bc-993f-b1057c78a469" absoluteBounds="6.25, 94.125, 2, 2.3478011067708451">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Prestamo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d97d1724-edfd-4bae-ba37-2e37d52b861f" absoluteBounds="6.265, 94.585, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="540b9224-be8a-49f7-9e6d-4a767b2488bd" absoluteBounds="3.5, 66.75, 2, 2.9247054036458451">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Producto" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a83863a5-228f-4d54-9618-f89d17081d80" absoluteBounds="3.515, 67.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="86fb16a4-cd81-4793-ad49-bb001c485702" absoluteBounds="0.75, 4.75, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Role" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1d439a7b-d6ca-458d-88a7-540dba3da12f" absoluteBounds="0.765, 5.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="94f74117-bda0-46a3-a996-63f3feb96669" absoluteBounds="3.5, 70.5, 2, 2.9247054036458451">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Tarifa" />
+      <nestedChildShapes>
+        <elementListCompartment Id="97e9ecbf-e449-4348-811e-0f4cf48b6a9f" absoluteBounds="3.515, 70.96, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9e79b451-c0ed-471c-bc0a-68b690f94e94" absoluteBounds="6.25, 88.25, 2, 1.9631982421875023">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/TM_TarjetasDeCredito" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5dd0d695-9283-421b-a1fd-c456895b523b" absoluteBounds="6.265, 88.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b4f72642-141b-46a7-99e4-12864e991ccf" absoluteBounds="6.25, 61.625, 2, 3.1170068359374952">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/TM_TasasIntere" />
+      <nestedChildShapes>
+        <elementListCompartment Id="56941caf-acf9-4662-8dd6-bbae30ca34fd" absoluteBounds="6.265, 62.085, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6be2b3bf-496e-46a2-8292-b032ae129231" absoluteBounds="0.75, 52.875, 2, 2.7324039713541595">
       <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Tenant" />
       <nestedChildShapes>
-        <elementListCompartment Id="09dde5c7-437a-4521-81f6-9445185cb61a" absoluteBounds="0.765, 5.335, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="a8122060-dd93-424c-9a27-2c74a83e4bb1" absoluteBounds="0.765, 53.335, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.75 : 2.36620198567708); (3.5 : 2.36620198567708)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <classShape Id="17b47f40-7437-40ca-949d-399574b4e40f" absoluteBounds="6.25, 81.75, 2, 2.9247054036458451">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Transaccione" />
+      <nestedChildShapes>
+        <elementListCompartment Id="67080640-c397-4cf1-9d40-a5c1fbf1255e" absoluteBounds="6.265, 82.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1feae25d-6b4f-44bc-bd91-18d583e01a26" absoluteBounds="0.75, 60.75, 2, 2.9247054036458309">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Usuario" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c2bf5a41-a60c-4ad7-a612-6865be81354f" absoluteBounds="0.765, 61.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ab5486b0-852f-4393-9b23-c77f1f68d181" absoluteBounds="9, 81.75, 2, 2.9247054036458451">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/TransaccionesImpuesto" />
+      <nestedChildShapes>
+        <elementListCompartment Id="270ef908-caa9-48d5-b3ed-8e0ca5bff68d" absoluteBounds="9.015, 82.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.25 : 117.337352701823); (9 : 117.337352701823)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/Factura/Factura_EstadosFactura" />
+      <nodes>
+        <classShapeMoniker Id="6823f591-a5d2-4a9a-a66e-1dc2b6aed10c" />
+        <classShapeMoniker Id="82450c2b-c795-4e30-97f6-d35cc3849124" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.25 : 74.0248527018229); (15 : 74.0248527018229)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/Reclamacione/Reclamacione_Detalles_Reclamacion" />
+      <nodes>
+        <classShapeMoniker Id="1d59cb11-dad8-473c-85f5-dd7b389a8103" />
+        <classShapeMoniker Id="3fa2441a-10fe-4c83-a0dc-9c7979dc3507" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(14.25 : 76.3181062825521); (15 : 76.3181062825521)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/Reclamacione/Reclamacione_Resolucion_Reclamacione" />
+      <nodes>
+        <classShapeMoniker Id="1d59cb11-dad8-473c-85f5-dd7b389a8103" />
+        <classShapeMoniker Id="5ad2a9c5-81bd-493e-8786-ee5d8616e09c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.40625 : 60.6074039713542); (8.40625 : 73.78125); (9.25 : 73.78125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/Servicio_al_cliente/Servicio_al_cliente_AtencionClienteXCliente" />
+      <nodes>
+        <classShapeMoniker Id="ffb37c5b-aa6f-47e6-a1a4-099bbfdea32d" />
+        <classShapeMoniker Id="59bf80c2-323b-4fe3-bfbc-97ffaff93841" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 79.2412019856771); (5.85416666666667 : 79.2412019856771 : JumpStart); (6.11458333333333 : 79.2412019856771 : JumpEnd); (6.25 : 79.2412019856771)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/Servicio/Servicio_ServicioXCliente" />
+      <nodes>
+        <classShapeMoniker Id="3f95d67b-0b11-4fd1-a00e-dfc30ccfc429" />
+        <classShapeMoniker Id="15c5651e-58d0-4e01-b1c3-5d23a77c9195" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 113.183503417969); (9.09375 : 113.183503417969); (9.09375 : 105.674705403646)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/Solicitudes_Credito/Solicitudes_Credito_Evaluaciones_Credito" />
+      <nodes>
+        <classShapeMoniker Id="f61856d7-638f-4786-9572-3f4caaa0950f" />
+        <classShapeMoniker Id="2bc2c395-1c70-4891-99ab-262b9ee46ed7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 108.616201985677); (9.25 : 108.616201985677)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TA_AgentesDeSoporte/TA_AgentesDeSoporte_TA_Informe" />
+      <nodes>
+        <classShapeMoniker Id="2656f66f-1954-43e1-893a-f372b7e37fe7" />
+        <classShapeMoniker Id="8d5a0c52-aa11-4e50-8da6-63e7c7b0e607" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 107.901848992839); (8.75 : 107.901848992839); (8.75 : 106.875); (11.75 : 106.875); (11.75 : 101.424705403646); (13 : 101.424705403646); (13 : 101.049705403646)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TA_AgentesDeSoporte/TA_AgentesDeSoporte_TA_Interaccione" />
+      <nodes>
+        <classShapeMoniker Id="2656f66f-1954-43e1-893a-f372b7e37fe7" />
+        <classShapeMoniker Id="9aae0a97-8528-4903-ac73-cc9978215dd6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 56.875); (3.125 : 56.5); (3.125 : 54.2315991210938); (3.5 : 54.2315991210938)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TA_MantenimientoTabla/TA_MantenimientoTabla_TA_HistorialMantenimiento" />
+      <nodes>
+        <classShapeMoniker Id="dfd6b21e-e1ee-46c8-89d7-ef02199fc67c" />
+        <classShapeMoniker Id="80255622-bcdc-4453-bbb2-52bb804b36a9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 50.9623527018229); (3.04166666666667 : 50.9623527018229 : JumpStart); (3.25520833333333 : 50.9623527018229 : JumpEnd); (3.5 : 50.9623527018229)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TA_ConfiguracionParamSistema/TA_ConfiguracionParamSistema_TA_TenantConfiguracionParamSistema" />
+      <nodes>
+        <classShapeMoniker Id="635e0e9a-70b1-41d5-933c-9a720494ef74" />
+        <classShapeMoniker Id="6d318c07-fdda-4835-bf75-03a343da3c53" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.25 : 99.5873527018229); (12 : 99.5873527018229)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TA_Ticket/TA_Ticket_TA_Interaccione" />
+      <nodes>
+        <classShapeMoniker Id="f5b6158a-b8e2-4156-b72b-f21cb850d335" />
+        <classShapeMoniker Id="9aae0a97-8528-4903-ac73-cc9978215dd6" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.15625 : 101.376609700521); (11.15625 : 102.28125); (12 : 102.28125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TA_Ticket/TA_Ticket_TA_Notificacione" />
+      <nodes>
+        <classShapeMoniker Id="f5b6158a-b8e2-4156-b72b-f21cb850d335" />
+        <classShapeMoniker Id="d65db467-78be-45fe-b05a-5562b056cec1" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.40625 : 107.25); (8.40625 : 100.298900553385); (9.25 : 100.298900553385)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TA_AgentesDeSoporte/TA_AgentesDeSoporte_TA_Ticket" />
+      <nodes>
+        <classShapeMoniker Id="2656f66f-1954-43e1-893a-f372b7e37fe7" />
+        <classShapeMoniker Id="f5b6158a-b8e2-4156-b72b-f21cb850d335" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.40625 : 68.5401025390625); (11.40625 : 73.46875); (12.25 : 73.46875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/Tipo_de_reclamo/Tipo_de_reclamo_Reclamacione" />
+      <nodes>
+        <classShapeMoniker Id="2df75d8f-3436-43fb-a007-c7b2c28c4126" />
+        <classShapeMoniker Id="1d59cb11-dad8-473c-85f5-dd7b389a8103" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 93.6573066923077); (6.1875 : 92.9698066923077); (6.1875 : 77.0497054036458); (8.87653746153846 : 77.0497054036458); (9.25153746153846 : 76.6747054036458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Cliente/TM_Cliente_AtencionClienteXCliente" />
+      <nodes>
+        <classShapeMoniker Id="178ea5d1-642b-4b57-99d8-44284ea52bbb" />
+        <classShapeMoniker Id="59bf80c2-323b-4fe3-bfbc-97ffaff93841" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 97.5112125651042); (4.5 : 104.705955403646); (4.94791916666667 : 104.705955403646 : JumpStart); (5.11458583333333 : 104.705955403646 : JumpEnd); (8.32291666666667 : 104.705955403646 : JumpStart); (8.48958333333333 : 104.705955403646 : JumpEnd); (9 : 104.705955403646)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Cliente/TM_Cliente_Evaluaciones_Credito" />
+      <nodes>
+        <classShapeMoniker Id="178ea5d1-642b-4b57-99d8-44284ea52bbb" />
+        <classShapeMoniker Id="2bc2c395-1c70-4891-99ab-262b9ee46ed7" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.0312525 : 97.5112125651042); (5.0312525 : 117.25080485026); (6.25 : 117.25080485026)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Cliente/TM_Cliente_Factura" />
+      <nodes>
+        <classShapeMoniker Id="178ea5d1-642b-4b57-99d8-44284ea52bbb" />
+        <classShapeMoniker Id="6823f591-a5d2-4a9a-a66e-1dc2b6aed10c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.9687475 : 97.5112125651042); (3.9687475 : 121.50080485026); (6.25 : 121.50080485026)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Cliente/TM_Cliente_Nomina" />
+      <nodes>
+        <classShapeMoniker Id="178ea5d1-642b-4b57-99d8-44284ea52bbb" />
+        <classShapeMoniker Id="eafe8920-3da3-4bbe-b5ff-ec8e9cf6ab41" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.43384615384615 : 93.625); (5.90625 : 93.1525961538461); (5.90625 : 71.2123527018229); (8.91666666666667 : 71.2123527018229 : JumpStart); (9.08333333333333 : 71.2123527018229 : JumpEnd); (9.25 : 71.2123527018229)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Cliente/TM_Cliente_ProductoXCliente" />
+      <nodes>
+        <classShapeMoniker Id="178ea5d1-642b-4b57-99d8-44284ea52bbb" />
+        <classShapeMoniker Id="ab975855-0211-4ee3-b7c5-e0cfe4aee310" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 97.2412019856771); (5.91666666666667 : 97.2412019856771 : JumpStart); (6.08333333333333 : 97.2412019856771 : JumpEnd); (8.54166666666667 : 97.2412019856771 : JumpStart); (8.70833333333333 : 97.2412019856771 : JumpEnd); (13.25 : 97.2412019856771); (13.25 : 77.1362125651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Cliente/TM_Cliente_Reclamacione" />
+      <nodes>
+        <classShapeMoniker Id="178ea5d1-642b-4b57-99d8-44284ea52bbb" />
+        <classShapeMoniker Id="1d59cb11-dad8-473c-85f5-dd7b389a8103" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.49846153846154 : 93.625); (6.03125 : 93.0922115384615); (6.03125 : 78.4643489928385); (6.25 : 78.4643489928385)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Cliente/TM_Cliente_ServicioXCliente" />
+      <nodes>
+        <classShapeMoniker Id="178ea5d1-642b-4b57-99d8-44284ea52bbb" />
+        <classShapeMoniker Id="15c5651e-58d0-4e01-b1c3-5d23a77c9195" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.29687875 : 97.5112125651042); (5.29687875 : 113.183503417969); (6.25 : 113.183503417969)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Cliente/TM_Cliente_Solicitudes_Credito" />
+      <nodes>
+        <classShapeMoniker Id="178ea5d1-642b-4b57-99d8-44284ea52bbb" />
+        <classShapeMoniker Id="f61856d7-638f-4786-9572-3f4caaa0950f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.44413211538462 : 93.625); (4.44413211538462 : 91.6627018229167); (9.25 : 91.6627018229167)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Cliente/TM_Cliente_TA_AutorizacionesUsuario" />
+      <nodes>
+        <classShapeMoniker Id="178ea5d1-642b-4b57-99d8-44284ea52bbb" />
+        <classShapeMoniker Id="da27903b-ceb9-4020-9ab7-32a74018191e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.76562625 : 97.5112125651042); (4.76562625 : 98.7107593359375); (4.94791916666667 : 98.7107593359375 : JumpStart); (5.11458583333333 : 98.7107593359375 : JumpEnd); (5.21354541666667 : 98.7107593359375 : JumpStart); (5.38021208333333 : 98.7107593359375 : JumpEnd); (6.25 : 98.7107593359375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Cliente/TM_Cliente_TA_HistorialCambioReg" />
+      <nodes>
+        <classShapeMoniker Id="178ea5d1-642b-4b57-99d8-44284ea52bbb" />
+        <classShapeMoniker Id="ceb65d20-c2ed-4057-b9ae-5f8c58cd14cf" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.23437375 : 97.5112125651042); (4.23437375 : 100.073348330078); (9.25 : 100.073348330078)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Cliente/TM_Cliente_TA_Ticket" />
+      <nodes>
+        <classShapeMoniker Id="178ea5d1-642b-4b57-99d8-44284ea52bbb" />
+        <classShapeMoniker Id="f5b6158a-b8e2-4156-b72b-f21cb850d335" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 93.6896143846154); (6.21875 : 92.9708643846154); (6.21875 : 81.1170068359375); (8.87653746153846 : 81.1170068359375); (9.25153746153846 : 80.7420068359375)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Cliente/TM_Cliente_TD_Notificacione" />
+      <nodes>
+        <classShapeMoniker Id="178ea5d1-642b-4b57-99d8-44284ea52bbb" />
+        <classShapeMoniker Id="a0b577ca-3d92-48e6-8ed2-2d9ee090e4fc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.46615384615384 : 93.625); (6.125 : 92.9661538461538); (6.125 : 75.2412019856771); (6.25 : 75.2412019856771)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Cliente/TM_Cliente_TD_TenantCliente" />
       <nodes>
-        <classShapeMoniker Id="16ca3ba3-e64e-4be7-8b7b-b96acdaed301" />
-        <classShapeMoniker Id="541ff231-5d60-4ea0-8299-ff56eaf044e7" />
+        <classShapeMoniker Id="178ea5d1-642b-4b57-99d8-44284ea52bbb" />
+        <classShapeMoniker Id="6f60046b-6634-4b44-9409-d0b58d94710e" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(2.75 : 6.33735270182292); (4.5 : 6.33735270182292); (4.5 : 3.73240397135417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5.5 : 96.7588525390625); (8.79166666666667 : 96.7588525390625 : JumpStart); (8.95833333333333 : 96.7588525390625 : JumpEnd); (9.25 : 96.7588525390625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Cliente/TM_Cliente_TD_UsuarioCliente" />
+      <nodes>
+        <classShapeMoniker Id="178ea5d1-642b-4b57-99d8-44284ea52bbb" />
+        <classShapeMoniker Id="8b9303f5-c9ab-4052-a8c7-5e006728e86c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.94081355769231 : 93.625); (3.94081355769231 : 86.4815991210938); (6.25 : 86.4815991210938)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Cliente/TM_Cliente_TM_Cuenta" />
+      <nodes>
+        <classShapeMoniker Id="178ea5d1-642b-4b57-99d8-44284ea52bbb" />
+        <classShapeMoniker Id="9c85cca6-73f9-4f5f-8a25-8c221260f496" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.02005126953125); (4.5 : 2.02005126953125); (4.5 : 4.75)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Permiso/TM_Permiso_TD_RolPermiso" />
+      <nodes>
+        <classShapeMoniker Id="c638e812-41e1-4bf6-9a50-74522d2d3826" />
+        <classShapeMoniker Id="89bdcfac-11c7-4599-9a72-e9219152715e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 95.2989005533854); (6.25 : 95.2989005533854)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Cliente/TM_Cliente_TM_Prestamo" />
+      <nodes>
+        <classShapeMoniker Id="178ea5d1-642b-4b57-99d8-44284ea52bbb" />
+        <classShapeMoniker Id="d258f0d4-0264-46bc-993f-b1057c78a469" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 69.6747054036458); (4.5 : 70.25); (5.75 : 70.25); (5.75 : 70.4499243509115); (9.25 : 70.4499243509115)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Producto/TM_Producto_ProductoXCliente" />
+      <nodes>
+        <classShapeMoniker Id="540b9224-be8a-49f7-9e6d-4a767b2488bd" />
+        <classShapeMoniker Id="ab975855-0211-4ee3-b7c5-e0cfe4aee310" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 68.2412019856771); (5.79166666666667 : 68.2412019856771 : JumpStart); (5.95833333333333 : 68.2412019856771 : JumpEnd); (6.25 : 68.2412019856771)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Producto/TM_Producto_TM_Cobertura" />
+      <nodes>
+        <classShapeMoniker Id="540b9224-be8a-49f7-9e6d-4a767b2488bd" />
+        <classShapeMoniker Id="cd25a8b9-da0c-40ad-87f5-73bf93a303d4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 6.02005126953125); (3.5 : 6.02005126953125)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Role/TM_Role_TD_RolPermiso" />
+      <nodes>
+        <classShapeMoniker Id="86fb16a4-cd81-4793-ad49-bb001c485702" />
+        <classShapeMoniker Id="89bdcfac-11c7-4599-9a72-e9219152715e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 7.2901025390625); (3.125 : 7.6651025390625); (3.125 : 34.2700512695313); (3.5 : 34.2700512695313)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Role/TM_Role_TD_UsuarioRol" />
+      <nodes>
+        <classShapeMoniker Id="86fb16a4-cd81-4793-ad49-bb001c485702" />
+        <classShapeMoniker Id="292919b7-ee25-4b32-91b0-e3b3f696ca0e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.93898913461538 : 93.625); (4.93898913461538 : 89.2315991210938); (5.82291666666667 : 89.2315991210938 : JumpStart); (6.20833333333333 : 89.2315991210938 : JumpEnd); (6.25 : 89.2315991210938)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Cliente/TM_Cliente_TM_TarjetasDeCredito" />
+      <nodes>
+        <classShapeMoniker Id="178ea5d1-642b-4b57-99d8-44284ea52bbb" />
+        <classShapeMoniker Id="9e79b451-c0ed-471c-bc0a-68b690f94e94" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 70.5015374615385); (5.875 : 70.1265374615385); (5.875 : 63.1835034179688); (6.25 : 63.1835034179688)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Tarifa/TM_Tarifa_TM_TasasIntere" />
+      <nodes>
+        <classShapeMoniker Id="94f74117-bda0-46a3-a996-63f3feb96669" />
+        <classShapeMoniker Id="b4f72642-141b-46a7-99e4-12864e991ccf" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 54.919501046224); (3.25 : 54.919501046224); (3.25 : 55.4631982421875); (9 : 55.4631982421875); (9 : 73.375); (10.25 : 73.375); (10.25 : 73.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Tenant/TM_Tenant_AtencionClienteXCliente" />
+      <nodes>
+        <classShapeMoniker Id="6be2b3bf-496e-46a2-8292-b032ae129231" />
+        <classShapeMoniker Id="59bf80c2-323b-4fe3-bfbc-97ffaff93841" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.71769230769231 : 52.875); (3.125 : 52.4676923076923); (3.125 : 38.2604484049479); (3.5 : 38.2604484049479)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Tenant/TM_Tenant_Auditoria" />
+      <nodes>
+        <classShapeMoniker Id="6be2b3bf-496e-46a2-8292-b032ae129231" />
+        <classShapeMoniker Id="4ea80aae-5267-4be4-a2b3-f7996affe542" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 53.0625025); (3.08854166666667 : 53.0625025 : JumpStart); (3.25520833333333 : 53.0625025 : JumpEnd); (9.34375 : 53.0625025); (9.34375 : 69.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Tenant/TM_Tenant_ProductoXCliente" />
+      <nodes>
+        <classShapeMoniker Id="6be2b3bf-496e-46a2-8292-b032ae129231" />
+        <classShapeMoniker Id="ab975855-0211-4ee3-b7c5-e0cfe4aee310" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 55.3694482421875); (3.04166666666667 : 55.3694482421875 : JumpStart); (3.33333333333333 : 55.3694482421875 : JumpEnd); (9.26041666666667 : 55.3694482421875 : JumpStart); (9.42708333333333 : 55.3694482421875 : JumpEnd); (13.25 : 55.3694482421875); (13.25 : 73.25)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Tenant/TM_Tenant_Reclamacione" />
+      <nodes>
+        <classShapeMoniker Id="6be2b3bf-496e-46a2-8292-b032ae129231" />
+        <classShapeMoniker Id="1d59cb11-dad8-473c-85f5-dd7b389a8103" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 55.5750952790465); (3.11294943490112 : 55.9380447139476 : JumpStart); (3.23080056509888 : 56.0558958441454 : JumpEnd); (3.4375 : 56.2625952790465); (3.4375 : 77.375); (5.87653746153846 : 77.375); (6.25153746153846 : 77.75)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Tenant/TM_Tenant_ServicioXCliente" />
+      <nodes>
+        <classShapeMoniker Id="6be2b3bf-496e-46a2-8292-b032ae129231" />
+        <classShapeMoniker Id="15c5651e-58d0-4e01-b1c3-5d23a77c9195" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 53.6782995605469); (3.08854166666667 : 53.6782995605469 : JumpStart); (3.25520833333333 : 53.6782995605469 : JumpEnd); (3.5 : 53.6782995605469)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Tenant/TM_Tenant_TA_HistorialMantenimiento" />
+      <nodes>
+        <classShapeMoniker Id="6be2b3bf-496e-46a2-8292-b032ae129231" />
+        <classShapeMoniker Id="80255622-bcdc-4453-bbb2-52bb804b36a9" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.73769230769231 : 55.6074039713542); (3.06607443490112 : 55.935786098563 : JumpStart); (3.23080056509888 : 56.1005122287608 : JumpEnd); (3.375 : 56.2447116636619); (3.375 : 64.5873527018229); (3.5 : 64.5873527018229)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Tenant/TM_Tenant_TA_Seguridad" />
+      <nodes>
+        <classShapeMoniker Id="6be2b3bf-496e-46a2-8292-b032ae129231" />
+        <classShapeMoniker Id="acbe211a-9abb-49f2-adab-e03dffb71571" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 52.9703836153846); (3.11294943490112 : 52.6074341804835 : JumpStart); (3.23080056509888 : 52.4895830502857 : JumpEnd); (3.3125 : 52.4078836153846); (3.3125 : 51.6190274720052); (3.5 : 51.6190274720052)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Tenant/TM_Tenant_TA_TenantConfiguracionParamSistema" />
+      <nodes>
+        <classShapeMoniker Id="6be2b3bf-496e-46a2-8292-b032ae129231" />
+        <classShapeMoniker Id="6d318c07-fdda-4835-bf75-03a343da3c53" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 55.553556817508); (3.11294943490112 : 55.9165062524091 : JumpStart); (3.23080056509888 : 56.0343573826069 : JumpEnd); (3.25 : 56.053556817508); (3.25 : 77.25); (8.87653746153846 : 77.25); (9.25153746153846 : 77.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Tenant/TM_Tenant_TD_Notificacione" />
+      <nodes>
+        <classShapeMoniker Id="6be2b3bf-496e-46a2-8292-b032ae129231" />
+        <classShapeMoniker Id="a0b577ca-3d92-48e6-8ed2-2d9ee090e4fc" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.67307692307692 : 55.6074039713542); (3.11294943490112 : 56.0472764831783 : JumpStart); (3.24642556509888 : 56.1807526133761 : JumpEnd); (3.28125 : 56.2155770482772); (3.28125 : 74.5268489928385); (6.25 : 74.5268489928385)]" fixedFrom="NotFixed" fixedTo="NotFixed">
       <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Tenant/TM_Tenant_TD_TenantCliente" />
       <nodes>
-        <classShapeMoniker Id="193ef52f-cdd9-42e3-8d22-9c74463defd8" />
-        <classShapeMoniker Id="541ff231-5d60-4ea0-8299-ff56eaf044e7" />
+        <classShapeMoniker Id="6be2b3bf-496e-46a2-8292-b032ae129231" />
+        <classShapeMoniker Id="6f60046b-6634-4b44-9409-d0b58d94710e" />
       </nodes>
     </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 55.5320183559695); (2.90625 : 55.6882683559695); (2.90625 : 55.40625); (3.11294943490112 : 55.6129494349011 : JumpStart); (3.23080056509888 : 55.7308005650989 : JumpEnd); (3.5 : 56)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Tenant/TM_Tenant_TD_UsuarioMantenimiento" />
+      <nodes>
+        <classShapeMoniker Id="6be2b3bf-496e-46a2-8292-b032ae129231" />
+        <classShapeMoniker Id="2cff8638-4c9d-4f65-889b-de4ff68259e4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.69461538461539 : 55.6074039713542); (3.21875 : 56.1315385867388); (3.21875 : 95.5681062825521); (3.5 : 95.5681062825521)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Tenant/TM_Tenant_TM_Cliente" />
+      <nodes>
+        <classShapeMoniker Id="6be2b3bf-496e-46a2-8292-b032ae129231" />
+        <classShapeMoniker Id="178ea5d1-642b-4b57-99d8-44284ea52bbb" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 55.5658645098157); (3.1875 : 56.0033645098157); (3.1875 : 68.2123527018229); (3.5 : 68.2123527018229)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Tenant/TM_Tenant_TM_Producto" />
+      <nodes>
+        <classShapeMoniker Id="6be2b3bf-496e-46a2-8292-b032ae129231" />
+        <classShapeMoniker Id="540b9224-be8a-49f7-9e6d-4a767b2488bd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.74692307692308 : 55.6074039713542); (3.15625 : 56.0167308944311); (3.15625 : 71.9623527018229); (3.5 : 71.9623527018229)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Tenant/TM_Tenant_TM_Tarifa" />
+      <nodes>
+        <classShapeMoniker Id="6be2b3bf-496e-46a2-8292-b032ae129231" />
+        <classShapeMoniker Id="94f74117-bda0-46a3-a996-63f3feb96669" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 52.9539380576923); (3.05729166666667 : 52.9539380576923 : JumpStart); (3.25520833333333 : 52.9539380576923 : JumpEnd); (6.34375 : 52.9539380576923); (6.34375 : 61.625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Tenant/TM_Tenant_TM_TasasIntere" />
+      <nodes>
+        <classShapeMoniker Id="6be2b3bf-496e-46a2-8292-b032ae129231" />
+        <classShapeMoniker Id="b4f72642-141b-46a7-99e4-12864e991ccf" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.19247283653846 : 93.625); (4.19247283653846 : 83.2123527018229); (6.25 : 83.2123527018229)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Cliente/TM_Cliente_TM_Transaccione" />
+      <nodes>
+        <classShapeMoniker Id="178ea5d1-642b-4b57-99d8-44284ea52bbb" />
+        <classShapeMoniker Id="17b47f40-7437-40ca-949d-399574b4e40f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 69.6131659421074); (5.81607443490112 : 69.9292403770085 : JumpStart); (5.93392556509888 : 70.0470915072063 : JumpEnd); (5.9375 : 70.0506659421074); (5.9375 : 82.4499243509115); (6.25 : 82.4499243509115)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Producto/TM_Producto_TM_Transaccione" />
+      <nodes>
+        <classShapeMoniker Id="540b9224-be8a-49f7-9e6d-4a767b2488bd" />
+        <classShapeMoniker Id="17b47f40-7437-40ca-949d-399574b4e40f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 63.6747054036458); (1.75 : 90.9379475325521); (2.19791916666667 : 90.9379475325521 : JumpStart); (2.36458583333333 : 90.9379475325521 : JumpEnd); (3.13541666666667 : 90.9379475325521 : JumpStart); (3.30208333333333 : 90.9379475325521 : JumpEnd); (3.85748022435898 : 90.9379475325521 : JumpStart); (4.02414689102564 : 90.9379475325521 : JumpEnd); (9.25 : 90.9379475325521)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Usuario/TM_Usuario_TA_AutorizacionesUsuario" />
+      <nodes>
+        <classShapeMoniker Id="1feae25d-6b4f-44bc-bd91-18d583e01a26" />
+        <classShapeMoniker Id="da27903b-ceb9-4020-9ab7-32a74018191e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.2812525 : 63.6747054036458); (2.2812525 : 98.1109834505208); (6.25 : 98.1109834505208)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Usuario/TM_Usuario_TA_HistorialCambioReg" />
+      <nodes>
+        <classShapeMoniker Id="1feae25d-6b4f-44bc-bd91-18d583e01a26" />
+        <classShapeMoniker Id="ceb65d20-c2ed-4057-b9ae-5f8c58cd14cf" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 60.7807682307692); (3.171875 : 60.3588932307692); (3.171875 : 47.2412019856771); (3.5 : 47.2412019856771)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Usuario/TM_Usuario_TA_RegistroActividade" />
+      <nodes>
+        <classShapeMoniker Id="1feae25d-6b4f-44bc-bd91-18d583e01a26" />
+        <classShapeMoniker Id="dbd8c0bb-f119-4593-a69a-42f7af54f89d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.218748 : 63.6747054036458); (1.218748 : 97.7612125651042); (2.19791916666667 : 97.7612125651042 : JumpStart); (2.36458583333333 : 97.7612125651042 : JumpEnd); (3.88541416666667 : 97.7612125651042 : JumpStart); (4.05208083333333 : 97.7612125651042 : JumpEnd); (4.15104041666667 : 97.7612125651042 : JumpStart); (4.31770708333333 : 97.7612125651042 : JumpEnd); (4.94791916666667 : 97.7612125651042 : JumpStart); (5.11458583333333 : 97.7612125651042 : JumpEnd); (6 : 97.7612125651042); (6 : 97); (8.875 : 97); (8.875 : 95.4731742695313); (9.25 : 95.4731742695313)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Usuario/TM_Usuario_TD_UsuarioCliente" />
+      <nodes>
+        <classShapeMoniker Id="1feae25d-6b4f-44bc-bd91-18d583e01a26" />
+        <classShapeMoniker Id="8b9303f5-c9ab-4052-a8c7-5e006728e86c" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 60.7992297692308); (3.09732443490112 : 60.4519053343297 : JumpStart); (3.30892556509888 : 60.2403042041319 : JumpEnd); (3.3125 : 60.2367297692308); (3.3125 : 57.3013032695313); (3.5 : 57.3013032695313)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Usuario/TM_Usuario_TD_UsuarioMantenimiento" />
+      <nodes>
+        <classShapeMoniker Id="1feae25d-6b4f-44bc-bd91-18d583e01a26" />
+        <classShapeMoniker Id="2cff8638-4c9d-4f65-889b-de4ff68259e4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.71615384615385 : 60.75); (3.140625 : 60.3255288461538); (3.140625 : 34.9363289042969); (3.5 : 34.9363289042969)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Usuario/TM_Usuario_TD_UsuarioRol" />
+      <nodes>
+        <classShapeMoniker Id="1feae25d-6b4f-44bc-bd91-18d583e01a26" />
+        <classShapeMoniker Id="292919b7-ee25-4b32-91b0-e3b3f696ca0e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 100.751537461538); (8.34732443490112 : 100.654213026637 : JumpStart); (8.46517556509888 : 100.536361896439 : JumpEnd); (8.625 : 100.376537461538); (8.625 : 83.2123527018229); (9 : 83.2123527018229)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TiposImpuesto/TiposImpuesto_TransaccionesImpuesto" />
+      <nodes>
+        <classShapeMoniker Id="81885a24-0d4b-4987-a04d-9406a7a63918" />
+        <classShapeMoniker Id="ab5486b0-852f-4393-9b23-c77f1f68d181" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 82.4186763509115); (9 : 82.4186763509115)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/Db_BancaSeguroAPIDataContext/TM_Transaccione/TM_Transaccione_TransaccionesImpuesto" />
+      <nodes>
+        <classShapeMoniker Id="17b47f40-7437-40ca-949d-399574b4e40f" />
+        <classShapeMoniker Id="ab5486b0-852f-4393-9b23-c77f1f68d181" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="559cde9e-2b90-4c11-ad63-0ded1bc23fe4" absoluteBounds="17.125, 36.75, 2, 1.9631982421875">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/VW_UsuarioTenancy" />
+      <nestedChildShapes>
+        <elementListCompartment Id="125bc071-acee-41e5-9743-894e4b1486b7" absoluteBounds="17.14, 37.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fb53c8a0-3bbf-44cc-bc0a-e9d46f07d80f" absoluteBounds="6.5, 1.125, 2, 1.9631982421875">
+      <DataClassMoniker Name="/Db_BancaSeguroAPIDataContext/VW_Tenant" />
+      <nestedChildShapes>
+        <elementListCompartment Id="85eb5050-825e-4909-9289-63d2d3e60592" absoluteBounds="6.515, 1.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

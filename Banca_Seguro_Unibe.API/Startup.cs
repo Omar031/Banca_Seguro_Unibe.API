@@ -41,28 +41,27 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
+//if (app.Environment.IsDevelopment())
+//{
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+//}
  
-
 app.UseHttpsRedirection();
 
 app.UseRouting();
 
-app.UseAuthorization(); // dar permiso al API (Autorizacion con fecha de expíración) 
-
 app.UseAuthentication(); // acceder al api con el permiso asumidos (roles)
 
+app.UseAuthorization(); // dar permiso al API (Autorizacion con fecha de expíración) 
+
+ 
 app.UseEndpoints(endpoint => {
 
     endpoint.MapControllers();
     endpoint.MapRazorPages();
-    });
-//app.UseCors();
- 
+});
 
+app.UseCors();
 
 app.Run();

@@ -12,14 +12,14 @@ namespace capaNegocios.Acciones
 
         /// Metodos statment
         /// 
-        public List<TM_Tenant> GetTenants(int? id = 0) 
-        { 
-            var listar = dbSeguroContext.TM_Tenants.ToList();
+        public List<VW_Tenant> GetTenants(int? id = 0)
+        {
+            var listar = dbSeguroContext.VW_Tenants.ToList();
 
-            return listar == null ? new List<TM_Tenant>() : listar ;
-        
+            return listar ;
+
         }
-        
+
 
     }
 }

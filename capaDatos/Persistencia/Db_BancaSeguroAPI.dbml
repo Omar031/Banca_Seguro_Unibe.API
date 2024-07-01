@@ -1,9 +1,421 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Db_BancaSeguro" Class="Db_BancaSeguroAPIDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-4NF9L2A\SQLEXPRESS;Initial Catalog=Db_BancaSeguro;Integrated Security=True;Encrypt=True;Trust Server Certificate=True" SettingsObjectName="capaDatos.Properties.Settings" SettingsPropertyName="Db_BancaSeguroConnectionString" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.TD_TenantClientes" Member="TD_TenantClientes">
-    <Type Name="TD_TenantCliente">
-      <Column Name="idTenantClientes" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BancaSeguroMultiple" Class="Db_BancaSeguroAPIDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-4NF9L2A\SQLEXPRESS;Initial Catalog=BancaSeguroMultiple;Integrated Security=True;Trust Server Certificate=True" SettingsObjectName="capaDatos.Properties.Settings" SettingsPropertyName="BancaSeguroMultipleConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.AtencionClienteXCliente" Member="AtencionClienteXClientes">
+    <Type Name="AtencionClienteXCliente">
+      <Column Name="atencionclientexclienteid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="atencionclienteid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="clienteid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="tenantsid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="creacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="modificacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="anulacion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="usercreacion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="usermodificacion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="useranulacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="flagactivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Servicio_al_cliente_AtencionClienteXCliente" Member="Servicio_al_cliente" ThisKey="atencionclienteid" OtherKey="atencionclienteid" Type="Servicio_al_cliente" IsForeignKey="true" />
+      <Association Name="TM_Cliente_AtencionClienteXCliente" Member="TM_Cliente" ThisKey="clienteid" OtherKey="cliente_id" Type="TM_Cliente" IsForeignKey="true" />
+      <Association Name="TM_Tenant_AtencionClienteXCliente" Member="TM_Tenant" ThisKey="tenantsid" OtherKey="tenant_id" Type="TM_Tenant" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Auditoria" Member="Auditorias">
+    <Type Name="Auditoria">
+      <Column Name="AuditoriaID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenantID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Accion" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="FecAccion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="FlagActivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TM_Tenant_Auditoria" Member="TM_Tenant" ThisKey="TenantID" OtherKey="tenant_id" Type="TM_Tenant" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CategoriasCuenta" Member="CategoriasCuentas">
+    <Type Name="CategoriasCuenta">
+      <Column Name="CategoriaID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="FecCreacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="FecModificacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="UsuarioCreacion" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="UsuarioModificacion" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="FecAnulacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="UsuarioAnulacion" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="FlagActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Detalles_Reclamacion" Member="Detalles_Reclamacions">
+    <Type Name="Detalles_Reclamacion">
+      <Column Name="Detalles_ReclamacionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="reclamacionid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="Documentos_adjuntos" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="creacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="modificacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="anulacion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="usercreacion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="usermodificacion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="useranulacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="flagactivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Reclamacione_Detalles_Reclamacion" Member="Reclamacione" ThisKey="reclamacionid" OtherKey="reclamacionid" Type="Reclamacione" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.EstadosFacturas" Member="EstadosFacturas">
+    <Type Name="EstadosFactura">
+      <Column Name="EstadoFacturaID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FacturaID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NombreEstado" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="FecCreacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="FecModificacion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="UsuarioCreacion" Type="System.String" DbType="VarChar(45)" CanBeNull="true" />
+      <Column Name="UsuarioModificaicon" Type="System.String" DbType="VarChar(45)" CanBeNull="true" />
+      <Column Name="FecAnulacion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="UsuarioAnulacion" Type="System.String" DbType="VarChar(45)" CanBeNull="true" />
+      <Column Name="FlagActivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Factura_EstadosFactura" Member="Factura" ThisKey="FacturaID" OtherKey="FacturaID" Type="Factura" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Evaluaciones_Credito" Member="Evaluaciones_Creditos">
+    <Type Name="Evaluaciones_Credito">
+      <Column Name="IdEvaluacion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdCliente" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdSolicitud" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Ingresos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Deudas_Existente" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Capacidad_Pago" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FecCreacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FecModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FecAnulacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UserModificacion" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="FlagActivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Solicitudes_Credito_Evaluaciones_Credito" Member="Solicitudes_Credito" ThisKey="IdSolicitud" OtherKey="IdSolicitud" Type="Solicitudes_Credito" IsForeignKey="true" />
+      <Association Name="TM_Cliente_Evaluaciones_Credito" Member="TM_Cliente" ThisKey="IdCliente" OtherKey="cliente_id" Type="TM_Cliente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Facturas" Member="Facturas">
+    <Type Name="Factura">
+      <Column Name="FacturaID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ClienteID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Monto" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="FeCEmision" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="FechaVencimiento" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="FecCreacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="FecModificacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="UsuarioCreacion" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="Facturascol" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="UsuarioModificacion" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="FecAnulacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="UsuarioAnulacion" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="FlagActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Factura_EstadosFactura" Member="EstadosFacturas" ThisKey="FacturaID" OtherKey="FacturaID" Type="EstadosFactura" />
+      <Association Name="TM_Cliente_Factura" Member="TM_Cliente" ThisKey="ClienteID" OtherKey="cliente_id" Type="TM_Cliente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Nominas" Member="Nominas">
+    <Type Name="Nomina">
+      <Column Name="NominaID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ClienteID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FechaInicio" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="FechaFin" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="TotalBruto" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalDeducciones" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalNeto" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="FecCreacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="FecModificacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="UsuarioCreacion" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="UsuarioModificacion" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="FecAnulacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="UsuarioAnulacion" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="FlagActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="TM_Cliente_Nomina" Member="TM_Cliente" ThisKey="ClienteID" OtherKey="cliente_id" Type="TM_Cliente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ProductoXCliente" Member="ProductoXClientes">
+    <Type Name="ProductoXCliente">
+      <Column Name="productoxclienteid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="productoid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="clienteid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="tenantsid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="creacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="modificacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="anulacion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="usercreacion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="usermodificacion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="useranulacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="flagactivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="TM_Cliente_ProductoXCliente" Member="TM_Cliente" ThisKey="clienteid" OtherKey="cliente_id" Type="TM_Cliente" IsForeignKey="true" />
+      <Association Name="TM_Producto_ProductoXCliente" Member="TM_Producto" ThisKey="productoid" OtherKey="producto_id" Type="TM_Producto" IsForeignKey="true" />
+      <Association Name="TM_Tenant_ProductoXCliente" Member="TM_Tenant" ThisKey="tenantsid" OtherKey="tenant_id" Type="TM_Tenant" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Reclamaciones" Member="Reclamaciones">
+    <Type Name="Reclamacione">
+      <Column Name="reclamacionid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="clienteid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="tiporeclamacionid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="tenantsid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fecha" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="hora" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="canal" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="gravedad" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="creacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="modificacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="anulacion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="usercreacion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="usermodificacion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="useranulacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="flagactivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Reclamacione_Detalles_Reclamacion" Member="Detalles_Reclamacions" ThisKey="reclamacionid" OtherKey="reclamacionid" Type="Detalles_Reclamacion" />
+      <Association Name="Reclamacione_Resolucion_Reclamacione" Member="Resolucion_Reclamaciones" ThisKey="reclamacionid" OtherKey="reclamacionid" Type="Resolucion_Reclamacione" />
+      <Association Name="Tipo_de_reclamo_Reclamacione" Member="Tipo_de_reclamo" ThisKey="tiporeclamacionid" OtherKey="tiporeclamacionid" Type="Tipo_de_reclamo" IsForeignKey="true" />
+      <Association Name="TM_Cliente_Reclamacione" Member="TM_Cliente" ThisKey="clienteid" OtherKey="cliente_id" Type="TM_Cliente" IsForeignKey="true" />
+      <Association Name="TM_Tenant_Reclamacione" Member="TM_Tenant" ThisKey="tenantsid" OtherKey="tenant_id" Type="TM_Tenant" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Resolucion_Reclamaciones" Member="Resolucion_Reclamaciones">
+    <Type Name="Resolucion_Reclamacione">
+      <Column Name="SolReclamacionesID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="reclamacionid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Fecha" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Hora" Type="System.TimeSpan" DbType="Time" CanBeNull="true" />
+      <Column Name="creacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="modificacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="anulacion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="usercreacion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="usermodificacion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="useranulacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="flagactivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Reclamacione_Resolucion_Reclamacione" Member="Reclamacione" ThisKey="reclamacionid" OtherKey="reclamacionid" Type="Reclamacione" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Servicio_al_cliente" Member="Servicio_al_clientes">
+    <Type Name="Servicio_al_cliente">
+      <Column Name="atencionclienteid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="customer" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="creacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="modificacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="anulacion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="usercreacion" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="usermodificacion" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="useranulacion" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="flagactivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Servicio_al_cliente_AtencionClienteXCliente" Member="AtencionClienteXClientes" ThisKey="atencionclienteid" OtherKey="atencionclienteid" Type="AtencionClienteXCliente" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Servicios" Member="Servicios">
+    <Type Name="Servicio">
+      <Column Name="servicioid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tipodeposito" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="creacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="modificacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="anulacion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="usercreacion" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="usermodificacion" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="useranulacion" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="flagactivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Servicio_ServicioXCliente" Member="ServicioXClientes" ThisKey="servicioid" OtherKey="servicioid" Type="ServicioXCliente" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ServicioXCliente" Member="ServicioXClientes">
+    <Type Name="ServicioXCliente">
+      <Column Name="servicioxclienteid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="servicioid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="clienteid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="tenantsid" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="creacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="modificacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="anulacion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="usercreacion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="usermodificacion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="useranulacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="flagactivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Servicio_ServicioXCliente" Member="Servicio" ThisKey="servicioid" OtherKey="servicioid" Type="Servicio" IsForeignKey="true" />
+      <Association Name="TM_Cliente_ServicioXCliente" Member="TM_Cliente" ThisKey="clienteid" OtherKey="cliente_id" Type="TM_Cliente" IsForeignKey="true" />
+      <Association Name="TM_Tenant_ServicioXCliente" Member="TM_Tenant" ThisKey="tenantsid" OtherKey="tenant_id" Type="TM_Tenant" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Solicitudes_Credito" Member="Solicitudes_Creditos">
+    <Type Name="Solicitudes_Credito">
+      <Column Name="IdSolicitud" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IdCliente" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Monto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Motivo_Solicitud" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="FecAplicacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FecEvaluacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ResultadoEvaluacion" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="FecCreacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FecModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FecAnulacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="UserModificacion" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="FlagActivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Solicitudes_Credito_Evaluaciones_Credito" Member="Evaluaciones_Creditos" ThisKey="IdSolicitud" OtherKey="IdSolicitud" Type="Evaluaciones_Credito" />
+      <Association Name="TM_Cliente_Solicitudes_Credito" Member="TM_Cliente" ThisKey="IdCliente" OtherKey="cliente_id" Type="TM_Cliente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TA_AgentesDeSoporte" Member="TA_AgentesDeSoportes">
+    <Type Name="TA_AgentesDeSoporte">
+      <Column Name="IDAgente" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Especializacion" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Disponibilidad" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="fecCreacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecAnulacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="usuarioCreacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usuarioModificacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usuarioAnulacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="TA_AgentesDeSoporte_TA_Informe" Member="TA_Informes" ThisKey="IDAgente" OtherKey="IDAgente" Type="TA_Informe" />
+      <Association Name="TA_AgentesDeSoporte_TA_Interaccione" Member="TA_Interacciones" ThisKey="IDAgente" OtherKey="IDAgente" Type="TA_Interaccione" />
+      <Association Name="TA_AgentesDeSoporte_TA_Ticket" Member="TA_Tickets" ThisKey="IDAgente" OtherKey="IDAgente" Type="TA_Ticket" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TA_AutorizacionesUsuarios" Member="TA_AutorizacionesUsuarios">
+    <Type Name="TA_AutorizacionesUsuario">
+      <Column Name="idAutorizacion" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="idClientes" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AutorizadoPor" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FechaModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaEliminacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreadoPor" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ModificadoPor" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="EliminadoPor" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="flagActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="TM_Cliente_TA_AutorizacionesUsuario" Member="TM_Cliente" ThisKey="idClientes" OtherKey="cliente_id" Type="TM_Cliente" IsForeignKey="true" />
+      <Association Name="TM_Usuario_TA_AutorizacionesUsuario" Member="TM_Usuario" ThisKey="idUsuario" OtherKey="idUsuario" Type="TM_Usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TA_ConfiguracionParamSistema" Member="TA_ConfiguracionParamSistemas">
+    <Type Name="TA_ConfiguracionParamSistema">
+      <Column Name="idConfig" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NombreParametro" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ValorParametro" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FechaModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaEliminacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreadoPor" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ModificadoPor" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="EliminadoPor" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="flagActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="TA_ConfiguracionParamSistema_TA_TenantConfiguracionParamSistema" Member="TA_TenantConfiguracionParamSistemas" ThisKey="idConfig" OtherKey="idConfig" Type="TA_TenantConfiguracionParamSistema" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TA_HistorialCambioReg" Member="TA_HistorialCambioRegs">
+    <Type Name="TA_HistorialCambioReg">
+      <Column Name="idCambio" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idClientes" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FechaCambio" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="ValorAnterior" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ValorNuevo" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="DescripcionCambio" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="flagActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="TM_Cliente_TA_HistorialCambioReg" Member="TM_Cliente" ThisKey="idClientes" OtherKey="cliente_id" Type="TM_Cliente" IsForeignKey="true" />
+      <Association Name="TM_Usuario_TA_HistorialCambioReg" Member="TM_Usuario" ThisKey="idUsuario" OtherKey="idUsuario" Type="TM_Usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TA_HistorialMantenimiento" Member="TA_HistorialMantenimientos">
+    <Type Name="TA_HistorialMantenimiento">
+      <Column Name="idMantenimiento" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idTabla" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idMantenimientoTabla" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FechaMantenimiento" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Observaciones" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="flagActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="TA_MantenimientoTabla_TA_HistorialMantenimiento" Member="TA_MantenimientoTabla" ThisKey="idTabla" OtherKey="idMantenimiento" Type="TA_MantenimientoTabla" IsForeignKey="true" />
+      <Association Name="TM_Tenant_TA_HistorialMantenimiento" Member="TM_Tenant" ThisKey="idMantenimientoTabla" OtherKey="tenant_id" Type="TM_Tenant" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TA_Informes" Member="TA_Informes">
+    <Type Name="TA_Informe">
+      <Column Name="IDInforme" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TipoInforme" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="FechaGeneracion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Datos" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="IDAgente" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fecCreacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecAnulacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="usuarioCreacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usuarioModificacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usuarioAnulacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="TA_AgentesDeSoporte_TA_Informe" Member="TA_AgentesDeSoporte" ThisKey="IDAgente" OtherKey="IDAgente" Type="TA_AgentesDeSoporte" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TA_Interacciones" Member="TA_Interacciones">
+    <Type Name="TA_Interaccione">
+      <Column Name="IDInteraccion" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDTicket" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDAgente" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FechaHora" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Contenido" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="fecCreacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecAnulacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="usuarioCreacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usuarioModificacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usuarioAnulacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="TA_AgentesDeSoporte_TA_Interaccione" Member="TA_AgentesDeSoporte" ThisKey="IDAgente" OtherKey="IDAgente" Type="TA_AgentesDeSoporte" IsForeignKey="true" />
+      <Association Name="TA_Ticket_TA_Interaccione" Member="TA_Ticket" ThisKey="IDTicket" OtherKey="IDTicket" Type="TA_Ticket" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TA_MantenimientoTablas" Member="TA_MantenimientoTablas">
+    <Type Name="TA_MantenimientoTabla">
+      <Column Name="idMantenimiento" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Tabla" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FechaModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaEliminacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreadoPor" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ModificadoPor" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="EliminadoPor" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="flagActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="TA_MantenimientoTabla_TA_HistorialMantenimiento" Member="TA_HistorialMantenimientos" ThisKey="idMantenimiento" OtherKey="idTabla" Type="TA_HistorialMantenimiento" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TA_Notificaciones" Member="TA_Notificaciones">
+    <Type Name="TA_Notificacione">
+      <Column Name="IDNotificacion" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDTicket" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TipoNotificacion" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="FechaHora" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="EnviadoA" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="fecCreacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecAnulacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="usuarioCreacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usuarioModificacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usuarioAnulacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="TA_Ticket_TA_Notificacione" Member="TA_Ticket" ThisKey="IDTicket" OtherKey="IDTicket" Type="TA_Ticket" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TA_RegistroActividades" Member="TA_RegistroActividades">
+    <Type Name="TA_RegistroActividade">
+      <Column Name="idActividad" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Actividad" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FechaModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaEliminacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreadoPor" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ModificadoPor" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="EliminadoPor" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="flagActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="TM_Usuario_TA_RegistroActividade" Member="TM_Usuario" ThisKey="idUsuario" OtherKey="idUsuario" Type="TM_Usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TA_Seguridad" Member="TA_Seguridads">
+    <Type Name="TA_Seguridad">
+      <Column Name="idSeguridad" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Politica" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Valor" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
       <Column Name="idTenant" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="FechaCreacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="FechaModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
@@ -12,31 +424,244 @@
       <Column Name="ModificadoPor" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="EliminadoPor" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="flagActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="TM_Cliente_TD_TenantCliente" Member="TM_Cliente" ThisKey="idClientes" OtherKey="idClientes" Type="TM_Cliente" IsForeignKey="true" />
-      <Association Name="TM_Tenant_TD_TenantCliente" Member="TM_Tenant" ThisKey="idTenant" OtherKey="idTenant" Type="TM_Tenant" IsForeignKey="true" />
+      <Association Name="TM_Tenant_TA_Seguridad" Member="TM_Tenant" ThisKey="idTenant" OtherKey="tenant_id" Type="TM_Tenant" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TA_TenantConfiguracionParamSistema" Member="TA_TenantConfiguracionParamSistemas">
+    <Type Name="TA_TenantConfiguracionParamSistema">
+      <Column Name="idTenantConfig" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idTenant" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idConfig" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ValorConfiguracion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Comentario" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="flagActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="TA_ConfiguracionParamSistema_TA_TenantConfiguracionParamSistema" Member="TA_ConfiguracionParamSistema" ThisKey="idConfig" OtherKey="idConfig" Type="TA_ConfiguracionParamSistema" IsForeignKey="true" />
+      <Association Name="TM_Tenant_TA_TenantConfiguracionParamSistema" Member="TM_Tenant" ThisKey="idTenant" OtherKey="tenant_id" Type="TM_Tenant" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TA_Tickets" Member="TA_Tickets">
+    <Type Name="TA_Ticket">
+      <Column Name="IDTicket" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="IDCliente" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDAgente" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DescripcionProblema" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="EstadoTicket" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Prioridad" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaCierre" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecCreacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecAnulacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="usuarioCreacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usuarioModificacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usuarioAnulacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="TA_Ticket_TA_Interaccione" Member="TA_Interacciones" ThisKey="IDTicket" OtherKey="IDTicket" Type="TA_Interaccione" />
+      <Association Name="TA_Ticket_TA_Notificacione" Member="TA_Notificaciones" ThisKey="IDTicket" OtherKey="IDTicket" Type="TA_Notificacione" />
+      <Association Name="TA_AgentesDeSoporte_TA_Ticket" Member="TA_AgentesDeSoporte" ThisKey="IDAgente" OtherKey="IDAgente" Type="TA_AgentesDeSoporte" IsForeignKey="true" />
+      <Association Name="TM_Cliente_TA_Ticket" Member="TM_Cliente" ThisKey="IDCliente" OtherKey="cliente_id" Type="TM_Cliente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TD_Notificaciones" Member="TD_Notificaciones">
+    <Type Name="TD_Notificacione">
+      <Column Name="NotificacionID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ClienteID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TenantID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Mensaje" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="fecNotificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecCreacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecAnulacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="usuarioCreacion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="usuarioAnulacion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="usuarioModificacion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FlagActivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TM_Cliente_TD_Notificacione" Member="TM_Cliente" ThisKey="ClienteID" OtherKey="cliente_id" Type="TM_Cliente" IsForeignKey="true" />
+      <Association Name="TM_Tenant_TD_Notificacione" Member="TM_Tenant" ThisKey="TenantID" OtherKey="tenant_id" Type="TM_Tenant" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TD_RolPermiso" Member="TD_RolPermisos">
+    <Type Name="TD_RolPermiso">
+      <Column Name="idRol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idPermiso" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FechaModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaEliminacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreadoPor" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ModificadoPor" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="EliminadoPor" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="flagActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="TM_Permiso_TD_RolPermiso" Member="TM_Permiso" ThisKey="idPermiso" OtherKey="idPermiso" Type="TM_Permiso" IsForeignKey="true" />
+      <Association Name="TM_Role_TD_RolPermiso" Member="TM_Role" ThisKey="idRol" OtherKey="idRol" Type="TM_Role" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TD_TenantClientes" Member="TD_TenantClientes">
+    <Type Name="TD_TenantCliente">
+      <Column Name="IDTenant" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDCliente" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="FechaModificacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="FechaEliminacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="CreadoPor" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="ModificadoPor" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="EliminadoPor" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="flagActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IDTenantClientes" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Association Name="TM_Cliente_TD_TenantCliente" Member="TM_Cliente" ThisKey="IDCliente" OtherKey="cliente_id" Type="TM_Cliente" IsForeignKey="true" />
+      <Association Name="TM_Tenant_TD_TenantCliente" Member="TM_Tenant" ThisKey="IDTenant" OtherKey="tenant_id" Type="TM_Tenant" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TD_UsuarioCliente" Member="TD_UsuarioClientes">
+    <Type Name="TD_UsuarioCliente">
+      <Column Name="idUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idClientes" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="FechaModificacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="FechaEliminacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="CreadoPor" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="ModificadoPor" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="EliminadoPor" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="flagActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="UsuarioClienteID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Association Name="TM_Cliente_TD_UsuarioCliente" Member="TM_Cliente" ThisKey="idClientes" OtherKey="cliente_id" Type="TM_Cliente" IsForeignKey="true" />
+      <Association Name="TM_Usuario_TD_UsuarioCliente" Member="TM_Usuario" ThisKey="idUsuario" OtherKey="idUsuario" Type="TM_Usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TD_UsuarioMantenimiento" Member="TD_UsuarioMantenimientos">
+    <Type Name="TD_UsuarioMantenimiento">
+      <Column Name="idUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idMantenimientoTabla" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FechaAsignacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FechaModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaEliminacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreadoPor" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ModificadoPor" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="EliminadoPor" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="flagActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="TM_Tenant_TD_UsuarioMantenimiento" Member="TM_Tenant" ThisKey="idMantenimientoTabla" OtherKey="tenant_id" Type="TM_Tenant" IsForeignKey="true" />
+      <Association Name="TM_Usuario_TD_UsuarioMantenimiento" Member="TM_Usuario" ThisKey="idUsuario" OtherKey="idUsuario" Type="TM_Usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TD_UsuarioRol" Member="TD_UsuarioRols">
+    <Type Name="TD_UsuarioRol">
+      <Column Name="idUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idRol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FechaModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaEliminacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreadoPor" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ModificadoPor" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="EliminadoPor" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="flagActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="TM_Role_TD_UsuarioRol" Member="TM_Role" ThisKey="idRol" OtherKey="idRol" Type="TM_Role" IsForeignKey="true" />
+      <Association Name="TM_Usuario_TD_UsuarioRol" Member="TM_Usuario" ThisKey="idUsuario" OtherKey="idUsuario" Type="TM_Usuario" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tipo_de_reclamos" Member="Tipo_de_reclamos">
+    <Type Name="Tipo_de_reclamo">
+      <Column Name="tiporeclamacionid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="creacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="modificacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="anulacion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="usercreacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="usermodificacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="useranulacion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="flagactivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="Tipo_de_reclamo_Reclamacione" Member="Reclamaciones" ThisKey="tiporeclamacionid" OtherKey="tiporeclamacionid" Type="Reclamacione" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TiposImpuesto" Member="TiposImpuestos">
+    <Type Name="TiposImpuesto">
+      <Column Name="TipoImpuestoID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="Porcentaje" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="FecCreacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="FecModificacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="UsuarioCreacion" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="UsuarioModificacion" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="FecAnulacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="UsuarioAnulacion" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="FlagActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="TiposImpuesto_TransaccionesImpuesto" Member="TransaccionesImpuestos" ThisKey="TipoImpuestoID" OtherKey="TipoImpuestoID" Type="TransaccionesImpuesto" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TM_Administativa" Member="TM_Administativas">
+    <Type Name="TM_Administativa">
+      <Column Name="ConfigID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="Valor" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.TM_Clientes" Member="TM_Clientes">
     <Type Name="TM_Cliente">
-      <Column Name="idClientes" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Nombre" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Identificacion_rnc_cedula" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="FechaCreacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="FechaModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="FechaEliminacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="CreadoPor" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
-      <Column Name="ModificadoPor" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="EliminadoPor" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="flagActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="TM_Cliente_TD_TenantCliente" Member="TD_TenantClientes" ThisKey="idClientes" OtherKey="idClientes" Type="TD_TenantCliente" />
+      <Column Name="cliente_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tenant_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nombre" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="apellido" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="RNCoCedula" Type="System.String" DbType="NVarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="TipoCliente" Type="System.String" DbType="NVarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaRegistro" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="telefono" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="direccion" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="fecCreacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="fecModificacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="fecAnulacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="usuarioCreacion" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="usuarioModificacion" Type="System.String" DbType="NVarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="isAvailable" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="TM_Cliente_AtencionClienteXCliente" Member="AtencionClienteXClientes" ThisKey="cliente_id" OtherKey="clienteid" Type="AtencionClienteXCliente" />
+      <Association Name="TM_Cliente_Evaluaciones_Credito" Member="Evaluaciones_Creditos" ThisKey="cliente_id" OtherKey="IdCliente" Type="Evaluaciones_Credito" />
+      <Association Name="TM_Cliente_Factura" Member="Facturas" ThisKey="cliente_id" OtherKey="ClienteID" Type="Factura" />
+      <Association Name="TM_Cliente_Nomina" Member="Nominas" ThisKey="cliente_id" OtherKey="ClienteID" Type="Nomina" />
+      <Association Name="TM_Cliente_ProductoXCliente" Member="ProductoXClientes" ThisKey="cliente_id" OtherKey="clienteid" Type="ProductoXCliente" />
+      <Association Name="TM_Cliente_Reclamacione" Member="Reclamaciones" ThisKey="cliente_id" OtherKey="clienteid" Type="Reclamacione" />
+      <Association Name="TM_Cliente_ServicioXCliente" Member="ServicioXClientes" ThisKey="cliente_id" OtherKey="clienteid" Type="ServicioXCliente" />
+      <Association Name="TM_Cliente_Solicitudes_Credito" Member="Solicitudes_Creditos" ThisKey="cliente_id" OtherKey="IdCliente" Type="Solicitudes_Credito" />
+      <Association Name="TM_Cliente_TA_AutorizacionesUsuario" Member="TA_AutorizacionesUsuarios" ThisKey="cliente_id" OtherKey="idClientes" Type="TA_AutorizacionesUsuario" />
+      <Association Name="TM_Cliente_TA_HistorialCambioReg" Member="TA_HistorialCambioRegs" ThisKey="cliente_id" OtherKey="idClientes" Type="TA_HistorialCambioReg" />
+      <Association Name="TM_Cliente_TA_Ticket" Member="TA_Tickets" ThisKey="cliente_id" OtherKey="IDCliente" Type="TA_Ticket" />
+      <Association Name="TM_Cliente_TD_Notificacione" Member="TD_Notificaciones" ThisKey="cliente_id" OtherKey="ClienteID" Type="TD_Notificacione" />
+      <Association Name="TM_Cliente_TD_TenantCliente" Member="TD_TenantClientes" ThisKey="cliente_id" OtherKey="IDCliente" Type="TD_TenantCliente" />
+      <Association Name="TM_Cliente_TD_UsuarioCliente" Member="TD_UsuarioClientes" ThisKey="cliente_id" OtherKey="idClientes" Type="TD_UsuarioCliente" />
+      <Association Name="TM_Cliente_TM_Cuenta" Member="TM_Cuentas" ThisKey="cliente_id" OtherKey="ClienteID" Type="TM_Cuenta" />
+      <Association Name="TM_Cliente_TM_Prestamo" Member="TM_Prestamos" ThisKey="cliente_id" OtherKey="ClienteID" Type="TM_Prestamo" />
+      <Association Name="TM_Cliente_TM_TarjetasDeCredito" Member="TM_TarjetasDeCreditos" ThisKey="cliente_id" OtherKey="ClienteID" Type="TM_TarjetasDeCredito" />
+      <Association Name="TM_Cliente_TM_Transaccione" Member="TM_Transacciones" ThisKey="cliente_id" OtherKey="cliente_id" Type="TM_Transaccione" />
+      <Association Name="TM_Tenant_TM_Cliente" Member="TM_Tenant" ThisKey="tenant_id" OtherKey="tenant_id" Type="TM_Tenant" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.TM_Tenant" Member="TM_Tenants">
-    <Type Name="TM_Tenant">
-      <Column Name="idTenant" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="Descripcion" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="IdentificadorIP" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
-      <Column Name="ConexionString" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+  <Table Name="dbo.TM_Coberturas" Member="TM_Coberturas">
+    <Type Name="TM_Cobertura">
+      <Column Name="coberturas_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="producto_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="descripcion" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="montoCobertura" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="fecCreacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecAnulacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="usuarioCreacion" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="usuarioModificacion" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="isAvailable" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="TM_Producto_TM_Cobertura" Member="TM_Producto" ThisKey="producto_id" OtherKey="producto_id" Type="TM_Producto" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TM_Cuentas" Member="TM_Cuentas">
+    <Type Name="TM_Cuenta">
+      <Column Name="CuentaID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ClienteID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TipoCuenta" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Saldo" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="FechaApertura" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FlagActivoInactivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TM_Cliente_TM_Cuenta" Member="TM_Cliente" ThisKey="ClienteID" OtherKey="cliente_id" Type="TM_Cliente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TM_Permisos" Member="TM_Permisos">
+    <Type Name="TM_Permiso">
+      <Column Name="idPermiso" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="FechaCreacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
       <Column Name="FechaModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="FechaEliminacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
@@ -44,7 +669,205 @@
       <Column Name="ModificadoPor" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="EliminadoPor" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
       <Column Name="flagActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Association Name="TM_Tenant_TD_TenantCliente" Member="TD_TenantClientes" ThisKey="idTenant" OtherKey="idTenant" Type="TD_TenantCliente" />
+      <Association Name="TM_Permiso_TD_RolPermiso" Member="TD_RolPermisos" ThisKey="idPermiso" OtherKey="idPermiso" Type="TD_RolPermiso" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TM_Prestamos" Member="TM_Prestamos">
+    <Type Name="TM_Prestamo">
+      <Column Name="PrestamoID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ClienteID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TipoDePrestamo" Type="System.String" DbType="VarChar(1)" CanBeNull="true" />
+      <Column Name="Monto" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="Interes" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="FechaDesembolso" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Plazo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="FlagActivoInactivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TM_Cliente_TM_Prestamo" Member="TM_Cliente" ThisKey="ClienteID" OtherKey="cliente_id" Type="TM_Cliente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TM_Productos" Member="TM_Productos">
+    <Type Name="TM_Producto">
+      <Column Name="producto_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tenant_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nombre" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="tipo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="fecCreacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecAnulacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="usuarioCreacion" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="usuarioModificacion" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="isAvailable" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="TM_Producto_ProductoXCliente" Member="ProductoXClientes" ThisKey="producto_id" OtherKey="productoid" Type="ProductoXCliente" />
+      <Association Name="TM_Producto_TM_Cobertura" Member="TM_Coberturas" ThisKey="producto_id" OtherKey="producto_id" Type="TM_Cobertura" />
+      <Association Name="TM_Producto_TM_Transaccione" Member="TM_Transacciones" ThisKey="producto_id" OtherKey="producto_id" Type="TM_Transaccione" />
+      <Association Name="TM_Tenant_TM_Producto" Member="TM_Tenant" ThisKey="tenant_id" OtherKey="tenant_id" Type="TM_Tenant" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TM_Roles" Member="TM_Roles">
+    <Type Name="TM_Role">
+      <Column Name="idRol" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FechaModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaEliminacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreadoPor" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ModificadoPor" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="EliminadoPor" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="flagActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="TM_Role_TD_RolPermiso" Member="TD_RolPermisos" ThisKey="idRol" OtherKey="idRol" Type="TD_RolPermiso" />
+      <Association Name="TM_Role_TD_UsuarioRol" Member="TD_UsuarioRols" ThisKey="idRol" OtherKey="idRol" Type="TD_UsuarioRol" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TM_Tarifas" Member="TM_Tarifas">
+    <Type Name="TM_Tarifa">
+      <Column Name="TarifaID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenantID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TipoProducto" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="MontoTarifa" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="fecCreacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecAnulacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="usuarioCreacion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="usuarioAnulacion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="usuarioModificacion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FlagActivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TM_Tarifa_TM_TasasIntere" Member="TM_TasasInteres" ThisKey="TarifaID" OtherKey="TarifaID" Type="TM_TasasIntere" />
+      <Association Name="TM_Tenant_TM_Tarifa" Member="TM_Tenant" ThisKey="TenantID" OtherKey="tenant_id" Type="TM_Tenant" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TM_TarjetasDeCredito" Member="TM_TarjetasDeCreditos">
+    <Type Name="TM_TarjetasDeCredito">
+      <Column Name="TarjetaID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ClienteID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="NumeroTarjeta" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="LimiteCredito" Type="System.Decimal" DbType="Decimal(10,2)" CanBeNull="true" />
+      <Column Name="FechaExpiracion" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FlagActivoInactivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TM_Cliente_TM_TarjetasDeCredito" Member="TM_Cliente" ThisKey="ClienteID" OtherKey="cliente_id" Type="TM_Cliente" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TM_TasasInteres" Member="TM_TasasInteres">
+    <Type Name="TM_TasasIntere">
+      <Column Name="TasaID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TenantID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TarifaID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TipoProducto" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Tasa" Type="System.Decimal" DbType="Decimal(5,2) NOT NULL" CanBeNull="false" />
+      <Column Name="fecCreacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecAnulacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="usuarioCreacion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="usuarioAnulacion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="usuarioModificacion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FlagActivo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="TM_Tarifa_TM_TasasIntere" Member="TM_Tarifa" ThisKey="TarifaID" OtherKey="TarifaID" Type="TM_Tarifa" IsForeignKey="true" />
+      <Association Name="TM_Tenant_TM_TasasIntere" Member="TM_Tenant" ThisKey="TenantID" OtherKey="tenant_id" Type="TM_Tenant" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TM_Tenants" Member="TM_Tenants">
+    <Type Name="TM_Tenant">
+      <Column Name="tenant_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="fecCreacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="fecModificacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="fecAnulacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="usuarioCreacion" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="usuarioModificacion" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="isAvailable" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="identificadorIP" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="conexionString" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="TM_Tenant_AtencionClienteXCliente" Member="AtencionClienteXClientes" ThisKey="tenant_id" OtherKey="tenantsid" Type="AtencionClienteXCliente" />
+      <Association Name="TM_Tenant_Auditoria" Member="Auditorias" ThisKey="tenant_id" OtherKey="TenantID" Type="Auditoria" />
+      <Association Name="TM_Tenant_ProductoXCliente" Member="ProductoXClientes" ThisKey="tenant_id" OtherKey="tenantsid" Type="ProductoXCliente" />
+      <Association Name="TM_Tenant_Reclamacione" Member="Reclamaciones" ThisKey="tenant_id" OtherKey="tenantsid" Type="Reclamacione" />
+      <Association Name="TM_Tenant_ServicioXCliente" Member="ServicioXClientes" ThisKey="tenant_id" OtherKey="tenantsid" Type="ServicioXCliente" />
+      <Association Name="TM_Tenant_TA_HistorialMantenimiento" Member="TA_HistorialMantenimientos" ThisKey="tenant_id" OtherKey="idMantenimientoTabla" Type="TA_HistorialMantenimiento" />
+      <Association Name="TM_Tenant_TA_Seguridad" Member="TA_Seguridads" ThisKey="tenant_id" OtherKey="idTenant" Type="TA_Seguridad" />
+      <Association Name="TM_Tenant_TA_TenantConfiguracionParamSistema" Member="TA_TenantConfiguracionParamSistemas" ThisKey="tenant_id" OtherKey="idTenant" Type="TA_TenantConfiguracionParamSistema" />
+      <Association Name="TM_Tenant_TD_Notificacione" Member="TD_Notificaciones" ThisKey="tenant_id" OtherKey="TenantID" Type="TD_Notificacione" />
+      <Association Name="TM_Tenant_TD_TenantCliente" Member="TD_TenantClientes" ThisKey="tenant_id" OtherKey="IDTenant" Type="TD_TenantCliente" />
+      <Association Name="TM_Tenant_TD_UsuarioMantenimiento" Member="TD_UsuarioMantenimientos" ThisKey="tenant_id" OtherKey="idMantenimientoTabla" Type="TD_UsuarioMantenimiento" />
+      <Association Name="TM_Tenant_TM_Cliente" Member="TM_Clientes" ThisKey="tenant_id" OtherKey="tenant_id" Type="TM_Cliente" />
+      <Association Name="TM_Tenant_TM_Producto" Member="TM_Productos" ThisKey="tenant_id" OtherKey="tenant_id" Type="TM_Producto" />
+      <Association Name="TM_Tenant_TM_Tarifa" Member="TM_Tarifas" ThisKey="tenant_id" OtherKey="TenantID" Type="TM_Tarifa" />
+      <Association Name="TM_Tenant_TM_TasasIntere" Member="TM_TasasInteres" ThisKey="tenant_id" OtherKey="TenantID" Type="TM_TasasIntere" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TM_Transacciones" Member="TM_Transacciones">
+    <Type Name="TM_Transaccione">
+      <Column Name="transaccion_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cliente_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="producto_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="monto" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="tipo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="fecCreacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecAnulacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="usuarioCreacion" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="usuarioModificacion" Type="System.String" DbType="VarChar(255)" CanBeNull="true" />
+      <Column Name="isAvailable" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="TM_Transaccione_TransaccionesImpuesto" Member="TransaccionesImpuestos" ThisKey="transaccion_id" OtherKey="TransaccionID" Type="TransaccionesImpuesto" />
+      <Association Name="TM_Cliente_TM_Transaccione" Member="TM_Cliente" ThisKey="cliente_id" OtherKey="cliente_id" Type="TM_Cliente" IsForeignKey="true" />
+      <Association Name="TM_Producto_TM_Transaccione" Member="TM_Producto" ThisKey="producto_id" OtherKey="producto_id" Type="TM_Producto" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TM_Usuarios" Member="TM_Usuarios">
+    <Type Name="TM_Usuario">
+      <Column Name="idUsuario" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ClaveUsuario" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaCreacion" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FechaModificacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaEliminacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CreadoPor" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="ModificadoPor" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="EliminadoPor" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="flagActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="TM_Usuario_TA_AutorizacionesUsuario" Member="TA_AutorizacionesUsuarios" ThisKey="idUsuario" OtherKey="idUsuario" Type="TA_AutorizacionesUsuario" />
+      <Association Name="TM_Usuario_TA_HistorialCambioReg" Member="TA_HistorialCambioRegs" ThisKey="idUsuario" OtherKey="idUsuario" Type="TA_HistorialCambioReg" />
+      <Association Name="TM_Usuario_TA_RegistroActividade" Member="TA_RegistroActividades" ThisKey="idUsuario" OtherKey="idUsuario" Type="TA_RegistroActividade" />
+      <Association Name="TM_Usuario_TD_UsuarioCliente" Member="TD_UsuarioClientes" ThisKey="idUsuario" OtherKey="idUsuario" Type="TD_UsuarioCliente" />
+      <Association Name="TM_Usuario_TD_UsuarioMantenimiento" Member="TD_UsuarioMantenimientos" ThisKey="idUsuario" OtherKey="idUsuario" Type="TD_UsuarioMantenimiento" />
+      <Association Name="TM_Usuario_TD_UsuarioRol" Member="TD_UsuarioRols" ThisKey="idUsuario" OtherKey="idUsuario" Type="TD_UsuarioRol" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TransaccionesImpuestos" Member="TransaccionesImpuestos">
+    <Type Name="TransaccionesImpuesto">
+      <Column Name="TransaccionImpuestoID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TransaccionID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="TipoImpuestoID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="MontoImpuesto" Type="System.Decimal" DbType="Decimal(18,0) NOT NULL" CanBeNull="false" />
+      <Column Name="FecCreacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="FecModificacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="UsuarioCreacion" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="UsuarioModificacion" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="FecAnulacion" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="UsuarioAnulacion" Type="System.String" DbType="VarChar(45) NOT NULL" CanBeNull="false" />
+      <Column Name="FlagActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Association Name="TiposImpuesto_TransaccionesImpuesto" Member="TiposImpuesto" ThisKey="TipoImpuestoID" OtherKey="TipoImpuestoID" Type="TiposImpuesto" IsForeignKey="true" />
+      <Association Name="TM_Transaccione_TransaccionesImpuesto" Member="TM_Transaccione" ThisKey="TransaccionID" OtherKey="transaccion_id" Type="TM_Transaccione" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_UsuarioTenancy" Member="VW_UsuarioTenancies">
+    <Type Name="VW_UsuarioTenancy">
+      <Column Name="idUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IDTenant" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="idClientes" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nombreUsuario" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="correo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="isActive" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VW_Tenants" Member="VW_Tenants">
+    <Type Name="VW_Tenant">
+      <Column Name="codigo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Host" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="fecRegistro" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="servidor" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="puerto" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="isAvailable" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
 </Database>
