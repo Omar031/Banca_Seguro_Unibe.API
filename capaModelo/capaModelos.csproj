@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Modelos\EncryptUsuarios.cs" />
     <Compile Include="Modelos\JWT.cs" />
     <Compile Include="Modelos\LoginUsuario.cs" />
     <Compile Include="Modelos\Token.cs" />

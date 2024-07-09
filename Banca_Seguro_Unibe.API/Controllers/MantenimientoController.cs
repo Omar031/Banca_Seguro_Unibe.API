@@ -3,12 +3,12 @@ using capaNegocios.Acciones;
 using Microsoft.AspNetCore.Authorization;
 using System.Security.Claims;
 using capaModelo.Modelos;
+using Microsoft.Identity.Client;
 
 
 namespace Banca_Seguro_Unibe.API.Controllers
 {
-    [Authorize]
-    //[ApiController]    
+    [Authorize] 
     public class MantenimientoController : Controller
     {
         private readonly AccionMantenimientos mantenimientos = new AccionMantenimientos();
@@ -38,10 +38,40 @@ namespace Banca_Seguro_Unibe.API.Controllers
             catch (Exception e)
             {
                 return BadRequest(e.Message);
-            }
-             
-             
+            } 
 
         }
+
+        [HttpPost] //form. register
+        [Route("/api/banco/mantenimento/CreateUser/")]
+        public IActionResult CreateUser([FromBody] Usuario usuarios)
+        {
+            try
+            {
+
+                var userIdentity = HttpContext.User.Identity as ClaimsIdentity;
+
+                if (seguridad.CheckTokenUser(userIdentity))
+                {
+                    var resultado = mantenimientos.CrearUsuario(usuarios);
+                    
+                    return Ok(resultado);
+
+                }
+                else
+                {
+                    return Unauthorized();
+                }
+                 
+
+            }
+            catch
+            {
+                return BadRequest();
+            }
+             
+        } 
+
+
     }
 }

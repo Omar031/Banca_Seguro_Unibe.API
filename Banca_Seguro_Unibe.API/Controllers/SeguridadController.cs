@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Banca_Seguro_Unibe.API.Controllers
 {
-    //[ApiController]
+    //[ApiController]    
     public class SeguridadController : Controller
     {
         private readonly AccionSeguridad seguridad = new AccionSeguridad();
@@ -29,7 +29,7 @@ namespace Banca_Seguro_Unibe.API.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("/api/banco/seguridad/Login")]
-        public IActionResult Login(LoginUsuario user)
+        public IActionResult Login([FromBody] LoginUsuario user)
         {
             try
             { 
